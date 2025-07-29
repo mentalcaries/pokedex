@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/mentalcaries/pokedexcli/internal/pokeapi"
 )
 
 
@@ -15,6 +17,7 @@ type cliCommand struct {
 }
 
 type config struct {
+    pokeApiClient pokeapi.Client
     Next *string
     Previous *string
 }
@@ -28,10 +31,9 @@ func cleanInput(text string) []string {
 }
 
 
-func startRepl(){
+func startRepl(config *config){
     scanner := bufio.NewScanner(os.Stdin)
     
-    callbackConfig := config{}
     for {
         fmt.Print("Pokedex > ")
         scanner.Scan()
@@ -42,7 +44,7 @@ func startRepl(){
         
         command, exists := getCommands()[commandName]
         if exists {
-            err := command.callback(&callbackConfig)
+            err := command.callback(config)
             if err != nil {
                 fmt.Println(err)
             }
@@ -71,7 +73,7 @@ func getCommands() map[string]cliCommand{
         "map" : {
             name: "map",
             description: "Display a list of locations",
-            callback: commandMap,
+            callback: commandMapForward,
         },
         "mapb":{
             name: "mapb",
