@@ -5,14 +5,11 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"time"
 
 	"github.com/mentalcaries/pokedexcli/internal/pokecache"
 )
 
-const cacheInterval = 5 * time.Minute // 5 minute interval
 
-var apiCache pokecache.Cache = pokecache.NewCache(cacheInterval)
 
 func (c *Client) ListLocations(pageUrl *string) (LocationResult, error){
     
@@ -23,7 +20,7 @@ func (c *Client) ListLocations(pageUrl *string) (LocationResult, error){
 
     locationResponse := LocationResult{}
 
-    cachedResponse, exists := apiCache.Get(requestUrl)
+    cachedResponse, exists := pokecache.ApiCache.Get(requestUrl)
     if exists {
         fmt.Println("Using Cached Data: ")
         if err := json.Unmarshal(cachedResponse, &locationResponse); err != nil {
@@ -55,7 +52,7 @@ func (c *Client) ListLocations(pageUrl *string) (LocationResult, error){
         fmt.Printf("Response failed with status code: %d", res.StatusCode)
     }
 
-    apiCache.Add(requestUrl, body)
+    pokecache.ApiCache.Add(requestUrl, body)
 
     if err := json.Unmarshal(body, &locationResponse); err != nil {
         return LocationResult{}, err

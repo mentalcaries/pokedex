@@ -6,7 +6,7 @@ import (
 )
 
 
-func commandMapForward(config *config) error {
+func commandMapForward(config *config, args ...string) error {
 
     locationResponse, err := config.pokeApiClient.ListLocations(config.Next)
     if err != nil {
@@ -23,7 +23,7 @@ func commandMapForward(config *config) error {
     return nil
 }
 
-func commandMapBack(config *config)error {
+func commandMapBack(config *config, args ...string)error {
 
     if config.Previous == nil {
         return errors.New("you're on the first page")
