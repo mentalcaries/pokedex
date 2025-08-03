@@ -1,8 +1,8 @@
-<div style="width: 100%">
+<p align="center">
 
 <img width="240" alt="image" src="https://github.com/user-attachments/assets/64f001f6-b156-4037-a798-6d6918b0e55f" style="display:block; margin: 0 auto;" />
 
-</div>
+</p>
 
 # Pokedex Go!
 
