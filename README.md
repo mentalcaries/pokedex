@@ -1,3 +1,6 @@
+<img width="640" height="640" alt="image" src="https://github.com/user-attachments/assets/64f001f6-b156-4037-a798-6d6918b0e55f" />
+
+
 # Pokedex Go!
 
 This is a simple and fun command line based game built in go.
