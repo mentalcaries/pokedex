@@ -1,4 +1,4 @@
-<img width="320" height="320" alt="image" src="https://github.com/user-attachments/assets/64f001f6-b156-4037-a798-6d6918b0e55f" style="text-align: center" />
+<img width="320" height="320" alt="image" src="https://github.com/user-attachments/assets/64f001f6-b156-4037-a798-6d6918b0e55f" style="margin: 0 auto;" />
 
 
 # Pokedex Go!
