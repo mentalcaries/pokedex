@@ -39,7 +39,10 @@ func startRepl(config *config){
         scanner.Scan()
 
         text := cleanInput(scanner.Text())
-        commandName:= text[0]
+        commandName := ""
+        if len(text) > 0 {
+            commandName= text[0]
+        }
         args := []string{}
 
         if len(text) > 1 {
