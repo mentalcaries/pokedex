@@ -1,5 +1,8 @@
+<div style="width: 100%">
+
 <img width="240" alt="image" src="https://github.com/user-attachments/assets/64f001f6-b156-4037-a798-6d6918b0e55f" style="display:block; margin: 0 auto;" />
 
+</div>
 
 # Pokedex Go!
 
@@ -10,4 +13,3 @@ It allows users to explore cities, catch pokemon and keep track of all their sta
 This app makes use of the [PokéAPI](https://pokeapi.co/) for all the City and Pokemon Data
 
 <img width="574" height="491" alt="image" src="https://github.com/user-attachments/assets/18ca04bb-f407-4d63-9102-f2155c2c6b4d" />
-
