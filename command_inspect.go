@@ -20,8 +20,8 @@ func commandInspect(config *config, args ...string)error{
     }
 
     fmt.Println("Name: " + pokemonDetails.Name)
-    fmt.Println("Height: " + strconv.Itoa(pokemonDetails.Height))
-    fmt.Println("Weight: " + strconv.Itoa(pokemonDetails.Weight))
+    fmt.Println("Height:", pokemonDetails.Height)
+    fmt.Println("Weight:", pokemonDetails.Weight)
     
     for _, stat := range pokemonDetails.Stats {
         fmt.Println("  -" + stat.Stat.Name + ": " + strconv.Itoa(stat.BaseStat))
